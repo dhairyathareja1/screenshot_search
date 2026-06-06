@@ -12,12 +12,12 @@ class SearchResult {
   });
 
   Map<String, dynamic> toMap() {
-    return {'image': image.toMap(), 'snippet': preview, 'score': score};
+    return {'image': image.toMap(), 'preview': preview, 'score': score};
   }
 
   @override
   String toString() {
-    return 'SearchResult(score: ${score.toStringAsFixed(2)}, snippet: "$preview")';
+    return 'SearchResult(score: ${score.toStringAsFixed(2)}, preview: "$preview")';
   }
 
   @override

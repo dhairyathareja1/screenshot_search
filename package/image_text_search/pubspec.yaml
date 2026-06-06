@@ -1,6 +1,12 @@
 name: image_text_search
-description: "A new Flutter package project."
+description:
+  "A Flutter package to index images via on-device OCR and search through them
+  by text content. Uses Google ML Kit for text recognition.
+  Ideal for screenshot search apps, document finders, and any use case where
+  images need to be searchable by the text inside them."
 version: 0.0.1
+homepage: https://github.com/dhairyathareja1/screenshot_search/tree/main/package/image_text_search
+repository: https://github.com/dhairyathareja1/screenshot_search
 homepage:
 
 environment:
