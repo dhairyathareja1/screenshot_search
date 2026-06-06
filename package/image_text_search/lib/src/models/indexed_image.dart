@@ -3,12 +3,14 @@ class IndexedImage {
   final String path;
   final String extractedText;
   final DateTime indexedAt;
+  final List<String> keywords;
 
   const IndexedImage({
     required this.id,
     required this.path,
     required this.extractedText,
     required this.indexedAt,
+    required this.keywords,
   });
 
   bool get hasText => extractedText.trim().isNotEmpty;
@@ -19,6 +21,7 @@ class IndexedImage {
       'path': path,
       'extractedText': extractedText,
       'indexedAt': indexedAt.toIso8601String(),
+      'keywords': keywords,
     };
   }
 
@@ -28,6 +31,7 @@ class IndexedImage {
       path: map['path'] as String,
       extractedText: map['extractedText'] as String,
       indexedAt: DateTime.parse(map['indexedAt'] as String),
+      keywords: List<String>.from(map['keywords']),
     );
   }
 
@@ -36,12 +40,14 @@ class IndexedImage {
     String? path,
     String? extractedText,
     DateTime? indexedAt,
+    List<String>? keywords,
   }) {
     return IndexedImage(
       id: id ?? this.id,
       path: path ?? this.path,
       extractedText: extractedText ?? this.extractedText,
       indexedAt: indexedAt ?? this.indexedAt,
+      keywords: keywords ?? this.keywords,
     );
   }
 
