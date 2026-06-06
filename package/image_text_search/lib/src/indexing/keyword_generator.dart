@@ -67,12 +67,13 @@ class KeywordGenerator {
     final List<String> keywords = [];
 
     for (final String word in rawWords) {
-      if (word.isEmpty) continue;
-      if (word.length < 2) continue;
-      if (_stopWords.contains(word)) continue;
-      if (seen.contains(word)) continue;
-      seen.add(word);
-      keywords.add(word);
+      final String betterWord = word.replaceAll(RegExp(r'[₹$€£]'), '');
+      if (betterWord.isEmpty) continue;
+      if (betterWord.length < 2) continue;
+      if (_stopWords.contains(betterWord)) continue;
+      if (seen.contains(betterWord)) continue;
+      seen.add(betterWord);
+      keywords.add(betterWord);
     }
     return keywords;
   }
